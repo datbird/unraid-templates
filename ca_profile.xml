@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<CommunityApplications>
+  <Profile>
+Unraid Community Applications templates for the apps I maintain.
+
+Each one is a small, single-container, self-hosted tool that does one job and
+keeps its data in one appdata folder. The images are built by GitHub Actions
+for both amd64 and arm64, and every template here points at the image built
+from a tagged release, never at an untested build.
+
+Report a problem against the app's own issue tracker, linked from its Support
+field. I read them.
+  </Profile>
+  <Icon>https://raw.githubusercontent.com/datbird/unraid-templates/main/icons/couchelephant.png</Icon>
+  <WebPage>https://github.com/datbird/unraid-templates</WebPage>
+</CommunityApplications>
