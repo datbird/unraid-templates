@@ -27,6 +27,17 @@ Point it at your Plex server under Settings and nothing else is required. A new 
   <TemplateURL>https://raw.githubusercontent.com/datbird/unraid-templates/main/templates/couchelephant.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/datbird/unraid-templates/main/icons/couchelephant.png</Icon>
 
+  <Screenshot>https://raw.githubusercontent.com/datbird/couchelephant/main/docs/images/guide-dark.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/datbird/couchelephant/main/docs/images/guide-light.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/datbird/couchelephant/main/docs/images/program-panel.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/datbird/couchelephant/main/docs/images/record-options.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/datbird/couchelephant/main/docs/images/passes.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/datbird/couchelephant/main/docs/images/add-schedule.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/datbird/couchelephant/main/docs/images/smart-filter.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/datbird/couchelephant/main/docs/images/schedule-calendar.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/datbird/couchelephant/main/docs/images/schedule-agenda.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/datbird/couchelephant/main/docs/images/settings-plex.png</Screenshot>
+
   <ExtraSearchTerms>plex dvr recording sports guide epg</ExtraSearchTerms>
   <Requires>A Plex Media Server with a DVR and a tuner already set up. CouchElephant does not need to run on the same machine as Plex, and it never touches your media files.</Requires>
   <License>MIT</License>
