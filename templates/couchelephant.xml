@@ -22,7 +22,7 @@ It also adds passes Plex has no equivalent for. Follow any of 1,300 professional
 Point it at your Plex server under Settings and nothing else is required. A new install starts in preview mode: it shows which airing each rule would take without writing anything to your DVR, so you can see it is right before you let it near the recorder.
   </Overview>
 
-  <Category>MediaApp-Video Tools-Utilities</Category>
+  <Category>MediaApp:Video Tools:Utilities</Category>
   <WebUI>http://[IP]:[PORT:8710]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/datbird/unraid-templates/main/templates/couchelephant.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/datbird/unraid-templates/main/icons/couchelephant.png</Icon>
