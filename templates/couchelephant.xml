@@ -19,6 +19,8 @@ CouchElephant reads the same guide, picks the live broadcast itself, and pins th
 &#13;
 It also adds passes Plex has no equivalent for. Follow any of 1,300 professional and college teams and it records every game they play. Or build a smart filter out of nested AND, OR and NOT conditions over genre, rating, channel, time and more. Every standard Plex recording option, padding included, is on every pass, and a new sports pass arrives with sensible padding already filled in.&#13;
 &#13;
+It can also follow something the guide has not heard of yet. Plex's guide reaches about twelve days, and no guide source anywhere reaches much further, because no broadcaster has decided that far out. So a series announced for next spring, or the rest of your team's season, has no guide row to match. CouchElephant holds the intention, shows what it is waiting for, and turns it into a real recording the moment Plex's guide carries an airing. Nothing outside the guide ever books anything. Announced series come from TVmaze, which needs no key and no account, so that works out of the box.&#13;
+&#13;
 Point it at your Plex server under Settings and nothing else is required. A new install starts in preview mode: it shows which airing each rule would take without writing anything to your DVR, so you can see it is right before you let it near the recorder.
   </Overview>
 
