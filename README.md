@@ -7,6 +7,7 @@ repository and publishes what it finds.
 | App | What it is | Image |
 | --- | --- | --- |
 | [CouchElephant](templates/couchelephant.xml) | A Plex DVR sidecar that records the live broadcast, not the repeat | `ghcr.io/datbird/couchelephant` |
+| [BlockSlot](templates/blockslot.xml) | The server for BlockSlot game save sync: an S3 store and a web UI | `ghcr.io/datbird/blockslot-server` |
 
 ## Layout
 

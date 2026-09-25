@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>BlockSlot</Name>
+  <Repository>ghcr.io/datbird/blockslot-server:latest</Repository>
+  <Registry>https://github.com/datbird/blockslot/pkgs/container/blockslot-server</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+
+  <Support>https://github.com/datbird/blockslot/issues</Support>
+  <Project>https://github.com/datbird/blockslot</Project>
+  <ReadMe>https://raw.githubusercontent.com/datbird/blockslot/main/server/README.md</ReadMe>
+
+  <Overview>
+You play a game on the PC, pick up the Steam Deck later, and the save is not there. Steam Cloud covers some games and not others. Emulators, non-Steam games and anything from another store are left to you, and a sync folder that copies files both ways will happily overwrite the newer save with the older one.&#13;
+&#13;
+BlockSlot is the server half of a save sync for your own devices. Each device uploads a game's save when the game closes and restores the newest one before it starts. This container is where those saves live: a small S3 store (Garage) and a web page to look after it. It does not replace Steam Cloud. Games that Steam Cloud already covers can stay with Steam.&#13;
+&#13;
+Every upload is kept as a snapshot with its history, so nothing is ever overwritten. When two devices both played from the same save, BlockSlot sees it and asks which one to keep, instead of guessing. From the web page you can browse every game, restore any older save to all devices, settle two saves, download a save as a zip, and set the emulator libraries and folders every device shares. A RetroArch or RetroBat saves folder is split into one save per game, so each game keeps its own history.&#13;
+&#13;
+Install it, open the web page and make the admin account. Then add a device: the page gives you a one-line setup code to paste into that device's BlockSlot app. Each device has its own key, so a lost laptop is one click to revoke. Cloudflare Access sign-in and per-device Cloudflare service tokens are built in, for when you want to reach it from outside your network.
+  </Overview>
+
+  <Category>Backup: Tools:Utilities</Category>
+  <WebUI>http://[IP]:[PORT:8761]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/datbird/unraid-templates/main/templates/blockslot.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/datbird/unraid-templates/main/icons/blockslot.png</Icon>
+
+  <Screenshot>https://raw.githubusercontent.com/datbird/blockslot/main/server/docs/images/01-games.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/datbird/blockslot/main/server/docs/images/02-game-history.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/datbird/blockslot/main/server/docs/images/03-two-saves.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/datbird/blockslot/main/server/docs/images/04-library.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/datbird/blockslot/main/server/docs/images/05-settings.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/datbird/blockslot/main/server/docs/images/06-devices.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/datbird/blockslot/main/server/docs/images/07-storage.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/datbird/blockslot/main/server/docs/images/10-first-device.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/datbird/blockslot/main/server/docs/images/08-sign-in.png</Screenshot>
+
+  <ExtraSearchTerms>save sync game saves steam deck emulator retroarch retrobat s3 garage</ExtraSearchTerms>
+  <Requires>The BlockSlot app on each device that plays: BlockSlot for Windows, or the BlockSlot plugin for Decky Loader on a Steam Deck. Both are free downloads on the project's releases page. The server never reads or changes anything outside its own appdata folder.</Requires>
+  <License>MIT</License>
+
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText/>
+  <DonateLink/>
+
+  <Config Name="WebUI Port" Target="8761" Default="8761" Mode="tcp"
+          Description="The web page: games, saves, settings, devices and storage."
+          Type="Port" Display="always" Required="true" Mask="false">8761</Config>
+
+  <Config Name="S3 Port" Target="3900" Default="3900" Mode="tcp"
+          Description="Where devices upload and fetch saves (Garage's S3 API)."
+          Type="Port" Display="always" Required="true" Mask="false">3900</Config>
+
+  <Config Name="Appdata" Target="/data" Default="/mnt/user/appdata/blockslot" Mode="rw"
+          Description="Every save, Garage's config and metadata, and the server's own settings. Back this folder up."
+          Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/blockslot</Config>
+
+  <Config Name="S3 port in setup codes" Target="BLOCKSLOT_PUBLIC_S3_PORT" Default="3900" Mode=""
+          Description="Only when the S3 port above is not 3900: the port written into device setup codes. Setting a device address on the Devices page overrides it."
+          Type="Variable" Display="advanced" Required="false" Mask="false">3900</Config>
+</Container>
