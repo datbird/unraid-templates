@@ -38,7 +38,7 @@ Setup is one button, Sign in with Plex. A new install starts in preview mode: it
   <Screenshot>https://raw.githubusercontent.com/datbird/couchelephant/main/docs/images/settings-recorder.png</Screenshot>
 
   <ExtraSearchTerms>plex dvr recording sports guide epg</ExtraSearchTerms>
-  <Requires>A Plex Media Server with Plex DVR already set up, which means Plex Pass and a tuner. The CouchElephant DVR is optional and needs a network tuner (HDHomeRun), plus your TV and Movies library folders added to the container as paths. It writes recordings into those folders and touches nothing else. For app discovery, set Network Type to Host.</Requires>
+  <Requires>A Plex Media Server with Plex DVR already set up, which means Plex Pass and a tuner. The CouchElephant DVR is optional and needs a network tuner (HDHomeRun), plus the Recordings and Plex library paths below. It writes recordings into those folders and touches nothing else. For app discovery, set Network Type to Host.</Requires>
   <License>MIT</License>
 
   <ExtraParams/>
@@ -55,6 +55,14 @@ Setup is one button, Sign in with Plex. A new install starts in preview mode: it
   <Config Name="Appdata" Target="/data" Default="/mnt/user/appdata/couchelephant" Mode="rw"
           Description="The database, your channel artwork, and any snapshots you schedule. The guide is a cache and rebuilds itself from Plex, so this stays small."
           Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/couchelephant</Config>
+
+  <Config Name="Recordings" Target="/recordings" Default="/mnt/user/appdata/couchelephant/recordings" Mode="rw"
+          Description="Only for the CouchElephant DVR. Where it records from the tuner before a recording moves into Plex. Fast disk or cache pool is best."
+          Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/couchelephant/recordings</Config>
+
+  <Config Name="Plex library" Target="/library" Default="" Mode="rw"
+          Description="Only for the CouchElephant DVR. The share that holds your Plex TV and Movies folders, such as /mnt/user/media. Finished recordings are copied into the folders you pick under Settings, Recording."
+          Type="Path" Display="always" Required="false" Mask="false"></Config>
 
   <Config Name="TZ" Target="TZ" Default="UTC" Mode=""
           Description="The container's clock. Guide times are stored as UTC and shown in whichever timezone you pick under Settings, so this only affects the log."
