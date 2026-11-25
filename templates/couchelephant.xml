@@ -67,4 +67,16 @@ Setup is one button, Sign in with Plex. A new install starts in preview mode: it
   <Config Name="TZ" Target="TZ" Default="UTC" Mode=""
           Description="The container's clock. Guide times are stored as UTC and shown in whichever timezone you pick under Settings, so this only affects the log."
           Type="Variable" Display="advanced" Required="false" Mask="false">UTC</Config>
+
+  <Config Name="PUID" Target="PUID" Default="99" Mode=""
+          Description="The user CouchElephant runs as. Match the user Plex runs as (99 is nobody on Unraid), so CouchElephant can write into every folder Plex makes. Settings, Recording says which user Plex uses. Leave empty to run as root."
+          Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+
+  <Config Name="PGID" Target="PGID" Default="100" Mode=""
+          Description="The group CouchElephant runs as. Match the group Plex runs as (100 is users on Unraid)."
+          Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+
+  <Config Name="Hardware transcoding" Target="/dev/dri" Default="" Mode=""
+          Description="Only for the CouchElephant DVR. Set to /dev/dri to convert recordings with an Intel or AMD GPU. Leave empty if the server has none."
+          Type="Device" Display="advanced" Required="false" Mask="false"></Config>
 </Container>
