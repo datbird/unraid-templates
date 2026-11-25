@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>CouchElephant</Name>
-  <Repository>ghcr.io/datbird/couchelephant:latest</Repository>
-  <Registry>https://github.com/datbird/couchelephant/pkgs/container/couchelephant</Registry>
+  <Repository>ghcr.io/beamflash/couchelephant:latest</Repository>
+  <Registry>https://github.com/beamflash/couchelephant/pkgs/container/couchelephant</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
 
-  <Support>https://github.com/datbird/couchelephant/issues</Support>
-  <Project>https://github.com/datbird/couchelephant</Project>
+  <Support>https://github.com/beamflash/couchelephant/issues</Support>
+  <Project>https://github.com/beamflash/couchelephant</Project>
   <ReadMe>https://raw.githubusercontent.com/datbird/couchelephant/main/README.md</ReadMe>
 
   <Overview>
